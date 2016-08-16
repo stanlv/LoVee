@@ -3,7 +3,7 @@
 Devise.setup do |config|
 
   config.omniauth :facebook, "APP_ID", "APP_SECRET",
-  scope: 'email,user_birthday,gender,interested_in,age_range',
+  scope: 'email,user_birthday,interested_in,age_range',
   info_fields: 'email, first_name, last_name',
   image_size: 'square',
   secure_image_url: true
