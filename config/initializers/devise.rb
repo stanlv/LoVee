@@ -2,9 +2,9 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
-  config.omniauth :facebook, "APP_ID", "APP_SECRET",
-  scope: 'email,user_birthday,interested_in,age_range',
-  info_fields: 'email, first_name, last_name',
+  config.omniauth :facebook,  ENV["FB_ID"], ENV["FB_SECRET"],
+  scope: 'email',
+  info_fields: 'email, first_name, last_name, user_birthday',
   image_size: 'square',
   secure_image_url: true
   # The secret key used by Devise. Devise uses this key to generate
