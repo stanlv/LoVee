@@ -3,7 +3,7 @@
   <head>
     <title>TODO</title>
     <%= csrf_meta_tags %>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -11,7 +11,11 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <div class="wrapper">
     <%= yield %>
+    </div>
+     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
   </body>
+
 </html>
