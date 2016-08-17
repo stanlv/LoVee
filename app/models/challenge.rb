@@ -1,4 +1,5 @@
 class Challenge < ActiveRecord::Base
   belongs_to :category
-  validates :content, uniqueness:true
+  scope :random , -> {limit(10).order("RANDOM()")}
+
 end
