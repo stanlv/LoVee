@@ -3,25 +3,48 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
  .padded {
-  padding: 100px 0;
+  padding: 50px 0;
 }
-.wrapper-grey {
-  background: #DDD;
+.wrapper-lovee {
+background: white;
+color:#2D4059;
 }
 
+.wrapper-lovee h2 {
+ font-family:lobster;
+ font-weight: lighter;
+ font-size: 50px;
+}
+
+.icons-size {
+ font-size: 100px;
+ margin-top: -31px;
+}
+
+
+.justify {
+  padding:50px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
  /* Banner design */
 .banner {
   color: #2D4059 ;
   text-align: center;
-  height: calc(100vh - 70px);
+  height: calc(120vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
+  background: #FF5F6D; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #FF5F6D, #FFC371);
+  background: -o-linear-gradient(right, #FF5F6D, #FFC371);
+  background: linear-gradient(to left, #FF5F6D, #FFC371); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .banner h1 {
-  font-size: 150px;
+  font-size: 100px;
   font-family: lobster;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
@@ -35,3 +58,19 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 
 }
+
+.about {
+padding: 45px;
+background: #ffd89b; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.about h2 {
+  color:white;
+  font-size: 40px;
+}
+
+.about p {
+  color: white;
+}
+
