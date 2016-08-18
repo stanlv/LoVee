@@ -2,27 +2,35 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
- .padded {
+
+body {
+}
+
+.padded {
   padding: 25px;
 }
+
 .wrapper-lovee {
-background: white;
-color:#2D4059;
+  background: $brand-color;
+  color: white;
 }
 
 .wrapper-lovee h2 {
- font-family:lobster;
- font-weight: lighter;
- font-size: 50px;
+  font-weight: lighter;
+  font-size: 50px;
 }
 
 .icons-size {
- font-size: 100px;
- margin-top: -31px;
+  font-size: 100px;
+  margin-top: -31px;
+}
+
+.lovee-icon {
+  color: $red;
 }
 
 .lovee-color{
-color:#2D4059;
+  color:#2D4059;
 }
 
 
@@ -42,60 +50,67 @@ color:#2D4059;
   justify-content: center;
 }
 .banner h1 {
+  font-family: $base-font;
   font-size: 100px;
-  font-family: lobster;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
+.banner h2 {
+  font-family: $base-font;
+  font-size: 60px;
+  font-weight: bold;
+}
+
 .banner p {
+  font-family: $base-font;
   font-size: 35px;
-  font-family: lobster;
   color: white;
   margin-bottom: 0px;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
 .about {
-padding: 45px;
-background: #ffd89b; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 45px;
+  background-color: #fce8c9;
+// background: #ffd89b; /* fallback for old browsers */
+// background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .about h2 {
-  color:white;
+  color: $brand-color;
   font-size: 40px;
 }
 
 .about p {
-  color: white;
+  color: $brand-color;
 }
 
 
 .motto {
-color: white ;
-font-weight: bold;
-background: #ffd89b; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-padding: 25px 0;
+  color: white ;
+  font-weight: bold;
+  background: $brand-color; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 25px 0;
 }
 
 
 .button-lovee {
   color: #2D4059;
-  font-size: 50px;
+  font-size: 40px;
   border: 1.5px solid #2D4059;
   padding: 15px 25px;
   border-radius: 50px;
-  font-weight: bold;
-  opacity: 0.6;
+  font-weight: bolder;
+  opacity: 1;
   transition: all 0.7s ease;
   }
 
-  .button-lovee:hover {
-   opacity: 2;
-   border: 1.5px solid #2D4059;
+.button-lovee:hover {
+  opacity: 1;
+  border: 1.5px solid $red;
   text-decoration: none;
-  color: #2D4059;
+  color: $red;
 }
