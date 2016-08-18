@@ -11,6 +11,7 @@
         <div class="category-card text-center">
           <%= link_to "", category_path(category), class: "category-card-link" %>
           <h3><%= category.name %></h3>
+            <h3>You can earn: <%= category.coins %></h3>
           <%= image_tag category.picture, class: "category-card-image"%>
         </div>
       </div>
