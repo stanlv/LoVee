@@ -2,9 +2,13 @@
 
 <div class="banner" style="background-image: linear-gradient(to right, rgba(255,216,155,0.6) 0%, rgba(25,84,100,0.6) 100%), url(<%= image_path 'banner1.jpg'%>);">
   <div class="banner-content">
-    <h2>Make <span style="color:#E76E56">LoVee</span>, not war</h2>
+    <h2><span style="color:#E76E56">LoVee</span>'s in the air</h2>
     <br>
-    <%= link_to t(".top_call_to_action", default: " Play Now "), new_user_session_path , class: "button-lovee btn" %>
+    <% if user_signed_in? %>
+      <%= link_to t(".top_call_to_action", default: " Play Now "), play_path , class: "button-lovee btn" %>
+    <% else %>
+      <%= link_to t(".top_call_to_action", default: " Play Now "), new_user_session_path , class: "button-lovee btn" %>
+    <% end %>
   </div>
 </div>
 
