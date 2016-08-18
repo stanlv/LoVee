@@ -1,0 +1,19 @@
+<h1><%= @category.name%></h1>
+
+<% @sorted_challenges.each do |challenge| %>
+<p><strong> <%= challenge.title %> </strong></p>
+<p>You can earn: <strong><%= @category.coins %></strong> coins</p>
+
+<br>
+<% end %>
+
+<%= link_to "Refresh", new_booking_path(category_id: @category.id) %>
+
+<%= form_for @booking do |f| %>
+  <%= hidden_field_tag "challenge_ids", @sorted_challenges.map(&:id) %>
+  <%= f.submit %>
+<% end %>
+
+<%#= link_to "Choose", bookings_path(sorted_challenges), method: :post %>
+
+<%= render 'shared/button' %>
