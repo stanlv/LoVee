@@ -11,23 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817102507) do
+ActiveRecord::Schema.define(version: 20160818134820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "bookings", ["challenge_id"], name: "index_bookings_on_challenge_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "coins"
   end
 
   create_table "challenges", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
     t.integer  "deadline"
-    t.integer  "coins"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -60,5 +71,7 @@ ActiveRecord::Schema.define(version: 20160817102507) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "bookings", "challenges"
+  add_foreign_key "bookings", "users"
   add_foreign_key "challenges", "categories"
 end
