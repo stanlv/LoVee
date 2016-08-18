@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :challenges, only: [:create, :index, :show, :destroy]
   end
 
+  get "/play", to: "pages#play"
+  get "/team", to: "pages#team"
+  get "/request_challenge", to: "pages#request_challenge"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
