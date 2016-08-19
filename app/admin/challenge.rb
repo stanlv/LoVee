@@ -13,5 +13,21 @@ ActiveAdmin.register Challenge do
 #   permitted
 # end
 
-  permit_params :title, :description, :deadline
+  permit_params :title, :description, :deadline, :category_id
+
+
+# Customizing the index form for challenge
+#
+   index do
+    selectable_column
+    column :id
+    column :title
+    column :description
+    column :deadline
+    column :category_id
+    column :created_at
+    column :updated_at
+    actions
+  end
+
 end

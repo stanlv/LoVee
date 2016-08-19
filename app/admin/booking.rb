@@ -13,6 +13,19 @@ ActiveAdmin.register Booking do
 #   permitted
 # end
 
- permit_params :status
+ permit_params :status, :user_id, :challenge_id
+
+# Customizing the index form for booking
+#
+   index do
+    selectable_column
+    column :id
+    column :challenge_id
+    column :status
+    column :user_id
+    column :created_at
+    column :updated_at
+    actions
+  end
 
 end

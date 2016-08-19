@@ -15,4 +15,16 @@ ActiveAdmin.register Category do
 
   permit_params :name, :picture, :coins
 
+  # Customizing the index form for Category
+  #
+   index do
+    selectable_column
+    column :id
+    column :name
+    column :picture
+    column :coins
+    column :created_at
+    column :updated_at
+    actions
+  end
 end
