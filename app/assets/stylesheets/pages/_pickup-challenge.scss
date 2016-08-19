@@ -1,0 +1,19 @@
+
+.button-refresh{
+  color: white;
+  font-size: 40px;
+  border: 1.5px solid white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-weight: bolder;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+
+.button-refresh:hover {
+  opacity: 1;
+  border: 1.5px solid $red;
+  text-decoration: none;
+  color: $red;
+}
