@@ -1,6 +1,66 @@
-<!-- Banner spot -->
+<div class="nav-and-banner-container">
 
-<div class="banner" style="background-image: linear-gradient(to right, rgba(255,216,155,0.6) 0%, rgba(25,84,100,0.6) 100%), url(<%= image_path 'banner1.jpg'%>);">
+
+<div class="navbar-lovee">
+<div class="navbar-wagon-item">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle menu-icon" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu navbar-wagon-dropdown-menu">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Anniversaries</a></li>
+        <li><a href="#">Buy coins</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+
+     <!-- Different navigation if login or not -->
+    <% if user_signed_in? %>
+
+      <!-- Profile picture and dropdown -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <% options = {class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"} %>
+          <% if user_signed_in? && current_user.facebook_picture_url %>
+          <%= image_tag current_user.facebook_picture_url, options %>
+          <% else %>
+          <%= image_tag "avatar_default", options %>
+          <% end %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
+            <li>
+              <%= link_to '#' do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <% else %>
+
+      <!-- Login text link -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <% end %>
+
+  </div>
+
+
+
+
+<!-- <div class="banner"> -->
+<div class="banner">
   <div class="banner-content">
     <h2><span style="color:#E76E56">LoVee</span>'s in the air</h2>
     <br>
@@ -10,6 +70,7 @@
       <%= link_to t(".top_call_to_action", default: " Play Now "), new_user_session_path , class: "button-lovee btn" %>
     <% end %>
   </div>
+</div>
 </div>
 
 <!-- Motto -->

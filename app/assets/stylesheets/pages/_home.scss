@@ -40,14 +40,23 @@ body {
   padding-top: 0px;
 }
  /* Banner design */
+
+.nav-and-banner-container {
+  background-image: linear-gradient(to right, rgba(255,216,155,0.6) 0%, rgba(25,84,100,0.6) 100%), url(banner1.jpg);
+  height: 100vh;
+  background-size: cover;
+}
+
 .banner {
   color: #2D4059 ;
   text-align: center;
-  height: calc(100vh - 70px);
-  background-size: cover !important;
+  // height: calc(100vh - 70px);
+  // background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 150px;
+
 }
 .banner h1 {
   font-family: $base-font;
@@ -94,23 +103,4 @@ body {
   // background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
   // background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 25px 0;
-}
-
-
-.button-lovee {
-  color: #2D4059;
-  font-size: 40px;
-  border: 1.5px solid #2D4059;
-  padding: 15px 25px;
-  border-radius: 50px;
-  font-weight: bolder;
-  opacity: 1;
-  transition: all 0.7s ease;
-  }
-
-.button-lovee:hover {
-  opacity: 1;
-  border: 1.5px solid $red;
-  text-decoration: none;
-  color: $red;
 }

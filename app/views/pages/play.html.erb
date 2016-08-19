@@ -1,14 +1,20 @@
 <div class="text-center">
-  <h1>Your room</h1>
-  <h2>Offer a challenge</h2>
-  <%= link_to "Give me a challenge!", categories_path %>
+  <h1 class="title">Your room</h1>
 
-  <div class="play-card">
-
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="play-card">
+          <%= link_to "Offer a challenge", categories_path, class: "button-lovee btn" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="play-card">
+          <%= link_to "Request a challenge", request_challenge_path, class: "button-lovee btn" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <h2>Request a challenge</h2>
-  <%= link_to "I want my partner to do a challenge for me!", request_challenge_path %>
 </div>
 
 
