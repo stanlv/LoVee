@@ -1,0 +1,17 @@
+.button-lovee {
+  color: #2D4059;
+  font-size: 40px;
+  border: 1.5px solid #2D4059;
+  padding: 15px 25px 15px 25px;
+  border-radius: 50px;
+  font-weight: bolder;
+  opacity: 1;
+  transition: all 0.7s ease;
+  }
+
+.button-lovee:hover {
+  opacity: 1;
+  border: 1.5px solid $red;
+  text-decoration: none;
+  color: $red;
+}
