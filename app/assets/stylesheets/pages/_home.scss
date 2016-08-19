@@ -42,7 +42,7 @@ body {
  /* Banner design */
 
 .nav-and-banner-container {
-  background-image: linear-gradient(to right, rgba(255,216,155,0.6) 0%, rgba(25,84,100,0.6) 100%), url(banner1.jpg);
+  background-image: linear-gradient(to right, rgba(255,216,155,0.6) 0%, rgba(25,84,100,0.6) 100%), image_path(banner1.jpg);
   height: 100vh;
   background-size: cover;
 }
