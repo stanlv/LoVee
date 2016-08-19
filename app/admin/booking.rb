@@ -13,5 +13,6 @@ ActiveAdmin.register Booking do
 #   permitted
 # end
 
+ permit_params :status
 
 end

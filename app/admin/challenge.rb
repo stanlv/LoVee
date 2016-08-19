@@ -13,5 +13,5 @@ ActiveAdmin.register Challenge do
 #   permitted
 # end
 
-
+  permit_params :title, :description, :deadline
 end
