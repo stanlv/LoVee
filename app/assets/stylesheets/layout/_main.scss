@@ -8,3 +8,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.title {
+  font-size: 40px;
+  font-weight: bolder;
+  color: $brand-color;
+  padding: 20px 0 40px;
+}
