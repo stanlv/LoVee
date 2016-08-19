@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root to: 'pages#home'
 
   devise_for :users,
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
     resources :challenges, only: [:create, :index, :show, :destroy]
   end
 
-  resources :bookings
+  resources :bookings, only: [:new, :create, :show, :index, :destroy]
 
   get "/play", to: "pages#play"
   get "/team", to: "pages#team"

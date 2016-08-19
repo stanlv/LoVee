@@ -1,11 +1,9 @@
 <h1 class = "text-center title">Choose a category</h1>
 
 <div class="container">
-    <div class="row">
+  <div class="row">
 
-<% @categories.each do |category| %>
-
-
+    <% @categories.each do |category| %>
       <div class="col-xs-4">
         <div class="category-card text-center">
           <%= link_to new_booking_path(category_id: category.id), class: "category-card-link" do %>
@@ -15,10 +13,6 @@
           <% end %>
         </div>
       </div>
-
-
-
-<% end %>
-
-</div>
+    <% end %>
   </div>
+</div>
