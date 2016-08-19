@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
         challenge_id: params[:challenge_ids].split(/\s/).sample,
         status: "created")
     if @booking.save
-        redirect_to categories_path, notice: 'One challenge has been picked up !'
+        redirect_to @booking, notice: 'One challenge has been picked up !'
       else
         render :new
       end
