@@ -5,10 +5,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.challenge_validation.subject
   #
-  def challenge_validation(user)
+  def welcome(user)
     @user = user
-    @greeting = "Hi"
+    @greeting = "Hi welcome in LoVee World"
 
-    mail to: @user.email, subject: "Challenge Offer"
+    mail(to: @user.email, subject: "welcome")
   end
 end
