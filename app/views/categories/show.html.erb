@@ -1,39 +1,28 @@
+<h2 class="heading-yellow text-center">Category - <%= @category.name%></h2>
+<h3 class="subheading text-center">Kisses earnable: <strong><%= @category.coins %></strong></h3>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <div class= "card" >
-        <div class=" text-center text-align lovee-message">
-        <h2>category: <%= @category.name%></h2>
-        <br>
-          <% @sorted_challenges.each do |challenge| %>
-          <p><strong> <%= challenge.title %> </strong> value: <strong><%= @category.coins %></strong> coins</p>
-          <% end %>
-          <br>
-          <div>
-         <%= link_to "", category_path(@category),class: "btn button-refresh fa fa-refresh"%>
-         <br>
-         <br>
-         <p> Refresh for a new random set <i class="fa fa-smile-o" aria-hidden="true"> </i> </p>
-       </div>
+    <% @sorted_challenges.each do |challenge| %>
+
+      <div class="col-xs-12 col-md-4">
+        <div class= "card" >
+          <div class=" text-center text-align lovee-message">
+            <p class="yellow-text"><strong> <%= challenge.title %> </strong> </p>
+            <p class="yellow-text">Task:</p>
+            <h1 class="red-text"><strong>?</strong></h1>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <div class= "card" >
-        <div class=" text-center text-align send-message">
-
-          <%#= form_for @booking do |f| %>
-          <%#= hidden_field_tag "challenge_ids", @sorted_challenges.map(&:id) %>
-          <%#= f.button :Pickup, class: "button-lovee" %>
-          <%# end %>
-          <%= link_to t(".top_call_to_action", default: "Play!"), new_user_session_path , class: "button-lovee btn" %>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container text-center">
+  <%= link_to "", new_booking_path(category_id: @category.id),class: "btn button-refresh fa fa-refresh"%>
+    <!-- <p> Refresh for a new random set <i class="fa fa-smile-o" aria-hidden="true"> </i> </p> -->
 </div>
+<br>
+<div class="container text-center">
+ <%= link_to t(".top_call_to_action", default: "Play!"), new_user_session_path , class: "button-lovee btn" %>
+</div>
+
+
