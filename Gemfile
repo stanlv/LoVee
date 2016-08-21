@@ -18,6 +18,10 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 
+# Gems for Active_Admin
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
@@ -25,6 +29,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
+  gem "letter_opener"
 
 
 end

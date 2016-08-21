@@ -1,17 +1,84 @@
-<!-- Banner spot -->
+<div class="nav-and-banner-container">
 
-<div class="banner" style="background-image:  linear-gradient(-225deg, rgba(255,160,82,0.7) 25%, rgba(255,241,82,0.5) 70%), url(<%= image_path 'banner1.jpg'%>);">
+
+<div class="navbar-lovee">
+<div class="navbar-wagon-item">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle menu-icon" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu navbar-wagon-dropdown-menu">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Anniversaries</a></li>
+        <li><a href="#">Buy coins</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+
+     <!-- Different navigation if login or not -->
+    <% if user_signed_in? %>
+
+      <!-- Profile picture and dropdown -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <% options = {class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"} %>
+          <% if user_signed_in? && current_user.facebook_picture_url %>
+          <%= image_tag current_user.facebook_picture_url, options %>
+          <% else %>
+          <%= image_tag "avatar_default", options %>
+          <% end %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
+            <li>
+              <%= link_to '#' do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <% else %>
+
+      <!-- Login text link -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <% end %>
+
+  </div>
+
+
+
+
+<!-- <div class="banner"> -->
+<div class="banner">
   <div class="banner-content">
-   <%= link_to t(".top_call_to_action", default: " Play Now "), new_user_session_path , class: "button-lovee btn" %>
- </div>
+    <h2><span style="color:#E76E56">LoVee</span>'s in the air</h2>
+    <br>
+    <% if user_signed_in? %>
+      <%= link_to t(".top_call_to_action", default: " Play Now "), play_path , class: "button-lovee btn" %>
+    <% else %>
+      <%= link_to t(".top_call_to_action", default: " Play Now "), new_user_session_path , class: "button-lovee btn" %>
+    <% end %>
+  </div>
+</div>
 </div>
 
 <!-- Motto -->
-<div class="motto">
+<!-- <div class="motto">
   <div class="container text-align text-center">
   <h2> LoVe.each do | other | </h2>
   </div>
-</div>
+</div> -->
 
 <!-- About the game  -->
 <div class="wrapper-lovee padded">
@@ -21,7 +88,7 @@
         <div >
           <h2><span>Play</span></h2>
           <div class="icons-size">
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
+            <i class="fa fa-gamepad lovee-icon" aria-hidden="true"></i>
           </div>
           <div class="justify">
             <p> A New gaming <strong>Experience</strong> for your <strong> Relationship </strong> Momentum ! </p>
@@ -32,10 +99,10 @@
         <div >
           <h2><span>Earn</span></h2>
           <div class="icons-size">
-            <i class="fa fa-money" aria-hidden="true"></i>
+            <i class="fa fa-money lovee-icon" aria-hidden="true"></i>
           </div>
           <div class="justify">
-            <p> Receive LoVee <strong>coins</strong> when you complet a <strong>challenge!</strong> </p>
+            <p> Receive LoVee <strong>coins</strong> when you complete a <strong>challenge!</strong> </p>
           </div>
         </div>
       </div>
@@ -43,7 +110,7 @@
         <div >
           <h2><span>Love</span></h2>
           <div class="icons-size">
-            <i class="fa fa-gratipay" aria-hidden="true"></i>
+            <i class="fa fa-gratipay lovee-icon" aria-hidden="true"></i>
           </div>
           <div class="justify">
             <p> Spend your <strong>LoVee</strong> coins and <strong> love </strong> each other ! </p>
@@ -59,8 +126,8 @@
 <div class="padded about">
   <div class="container text-align text-center">
     <h2> Why ?</h2>
-    <p> LoVee is a digital experience Which helps couples to re-invent the love every single days.</p>
-    <p> With LoVee you would challenge each other for a maximum of fun in your daily life</p>
+    <p> LoVee is a digital experience which helps couples to re-invent their love every single day.</p>
+    <p> With LoVee you will challenge each other for a maximum of fun in your daily life</p>
   </div>
 </div>
 

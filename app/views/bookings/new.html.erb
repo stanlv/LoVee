@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <div class= "card" >
+        <div class=" text-center text-align lovee-message">
+        <h2>category: <%= @category.name%></h2>
+        <br>
+          <% @sorted_challenges.each do |challenge| %>
+          <p><strong> <%= challenge.title %> </strong> value: <strong><%= @category.coins %></strong> coins</p>
+          <% end %>
+          <br>
+          <div>
+         <%= link_to "", new_booking_path(category_id: @category.id),class: "btn button-refresh fa fa-refresh"%>
+         <br>
+         <br>
+         <p> Refresh for a new random set <i class="fa fa-smile-o" aria-hidden="true"> </i> </p>
+       </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <div class= "card" >
+        <div class=" text-center text-align send-message">
+
+          <%= form_for @booking do |f| %>
+          <%= hidden_field_tag "challenge_ids", @sorted_challenges.map(&:id) %>
+          <%= f.button :Pickup, class: "button-lovee" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

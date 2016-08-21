@@ -1,25 +1,19 @@
-<h1 class = "text-center">Choose a category</h1>
+<h1 class = "text-center title">Choose a category</h1>
 
+<div class="container">
+  <div class="row">
 
-
-<% @categories.each do |category| %>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-
+    <% @categories.each do |category| %>
+      <div class="col-xs-12 col-md-4">
         <div class="category-card text-center">
-          <%= link_to "", category_path(category), class: "category-card-link" %>
-          <h3><%= category.name %></h3>
+          <%= link_to new_booking_path(category_id: category.id), class: "category-card-link" do %>
+            <h1 class="call-to-action-font"><%= category.name %></h1>
+            <%= image_tag category.picture, class: "category-card-image"%>
             <h3>You can earn: <%= category.coins %></h3>
-          <%= image_tag category.picture, class: "category-card-image"%>
+            <h3>100 coins</h3>
+          <% end %>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
-
-
-<% end %>
-
-
-  <%= render 'shared/button' %>
+</div>

@@ -1,10 +1,7 @@
 <h1><%= @category.name%></h1>
 
-<%= @sorted_challenges.each do |challenge| %>
+<% @sorted_challenges.each do |challenge| %>
   <p><strong> <%= challenge.title %> </strong></p>
   <p>description: <%= challenge.description %></p>
-  <p>You can earn: <strong><%= challenge.coins %></strong> coins</p>
   <br>
 <% end %>
-
- <%= render 'shared/button' %>

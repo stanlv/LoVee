@@ -1,0 +1,17 @@
+.play-card {
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  background-color: $brand-color;
+  opacity: 0.8;
+  margin: 0 auto 20px;
+  padding: 50px 10px;
+
+    a {
+      text-decoration: none;
+      color: $yellow;
+      font-size: 3.5vw;
+      font-family: 'Lobster'
+    }
+}
+
+
