@@ -6,11 +6,20 @@
     <% @categories.each do |category| %>
       <div class="col-xs-12 col-md-4">
         <div class="category-card text-center">
-          <%= link_to new_booking_path(category_id: category.id), class: "category-card-link" do %>
-            <h1 class="call-to-action-font"><%= category.name %></h1>
-            <%= image_tag category.picture, class: "category-card-image"%>
-            <h3>You can earn: <%= category.coins %></h3>
-            <h3>100 coins</h3>
+          <% if user_signed_in? %>
+            <%= link_to new_booking_path(category_id: category.id), class: "category-card-link" do %>
+              <h1 class="call-to-action-font"><%= category.name %></h1>
+              <%= image_tag category.picture, class: "category-card-image"%>
+              <h3>You can earn: <%= category.coins %></h3>
+              <h3>100 coins</h3>
+            <% end %>
+          <% else %>
+            <%= link_to category_path(category), class: "category-card-link" do %>
+              <h1 class="call-to-action-font"><%= category.name %></h1>
+              <%= image_tag category.picture, class: "category-card-image"%>
+              <h3>You can earn: <%= category.coins %></h3>
+              <h3>100 coins</h3>
+            <% end %>
           <% end %>
         </div>
       </div>

@@ -1,7 +1,28 @@
-<h1><%= @category.name%></h1>
+<h2 class="heading-yellow text-center">Category - <%= @category.name%></h2>
+<h3 class="subheading text-center">Kisses earnable: <strong><%= @category.coins %></strong></h3>
+<div class="container">
+  <div class="row">
+    <% @sorted_challenges.each do |challenge| %>
 
-<% @sorted_challenges.each do |challenge| %>
-  <p><strong> <%= challenge.title %> </strong></p>
-  <p>description: <%= challenge.description %></p>
-  <br>
-<% end %>
+      <div class="col-xs-12 col-md-4">
+        <div class= "card" >
+          <div class=" text-center text-align lovee-message">
+            <p class="yellow-text"><strong> <%= challenge.title %> </strong> </p>
+            <p class="yellow-text">Task:</p>
+            <h1 class="red-text"><strong>?</strong></h1>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container text-center">
+  <%= link_to "", new_booking_path(category_id: @category.id),class: "btn button-refresh fa fa-refresh"%>
+    <!-- <p> Refresh for a new random set <i class="fa fa-smile-o" aria-hidden="true"> </i> </p> -->
+</div>
+<br>
+<div class="container text-center">
+ <%= link_to t(".top_call_to_action", default: "Play!"), new_user_session_path , class: "button-lovee btn" %>
+</div>
+
+

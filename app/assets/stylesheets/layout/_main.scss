@@ -15,3 +15,30 @@ body {
   color: $brand-color;
   padding: 20px 0 40px;
 }
+
+.heading-blue {
+  font-size: 45px;
+  color: $brand-color;
+  font-family: 'Lobster'
+}
+
+.heading-yellow {
+  font-size: 45px;
+  color: $yellow;
+  font-family: 'Lobster'
+}
+
+.subheading {
+  font-size: 25px;
+  font-weight: bolder;
+  color: $brand-color;
+}
+
+.yellow-text {
+  font-size: 18px;
+  color: $yellow;
+}
+
+.red-text {
+  color: $red;
+}

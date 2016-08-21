@@ -1,13 +1,14 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show]
+  skip_before_action :authenticate_user!
 
   def index
     @categories = Category.all
   end
 
   def show
-    # @challenges = Challenge.where(category_id: @category.id)
-    # @sorted_challenges = @challenges.random
+    @challenges = Challenge.where(category_id: @category.id)
+    @sorted_challenges = @challenges.random
   end
 
   def new

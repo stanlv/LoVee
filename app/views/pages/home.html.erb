@@ -67,7 +67,7 @@
     <% if user_signed_in? %>
       <%= link_to t(".top_call_to_action", default: " Play Now "), play_path , class: "button-lovee btn" %>
     <% else %>
-      <%= link_to t(".top_call_to_action", default: " Play Now "), new_user_session_path , class: "button-lovee btn" %>
+      <%= link_to t(".top_call_to_action", default: " Play Now "), play_path , class: "button-lovee btn" %>
     <% end %>
   </div>
 </div>
