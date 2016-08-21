@@ -30,7 +30,7 @@
           <% if user_signed_in? && current_user.facebook_picture_url %>
           <%= image_tag current_user.facebook_picture_url, options %>
           <% else %>
-          <%= image_tag "avatar_default", options %>
+          <%= image_tag "avatar_default.png", options %>
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
             <li>
