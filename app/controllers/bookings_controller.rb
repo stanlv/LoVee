@@ -28,6 +28,8 @@ class BookingsController < ApplicationController
       end
   end
 
+  def challenge_
+
 
 
   private
