@@ -18,9 +18,25 @@
   letter-spacing: 20px;
   transition: color 0.5s ease;
 }
+.footer .list-unstyled a {
+  color: white;
+  transition: color 0.5s ease;
+  font-size: 15px;
+  letter-spacing: 0px;
+}
 .footer a:hover{
   color: #FF936F;
 }
 .footer p {
   margin-top: 17px;
+}
+
+@media (max-width: $screen-sm) {
+  .footer-copyright {
+    text-align: center;
+  }
+  .list-inline, .list-unstyled {
+    text-align: center;
+  }
+
 }

@@ -8,7 +8,11 @@
   transition: all 0.7s ease;
   background: 0;
   margin-bottom: 10px;
+  &-small {
+    font-size: 23px;
+    margin: 2px;
   }
+}
 
 .button-lovee:hover {
   opacity: 1;

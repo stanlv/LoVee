@@ -8,7 +8,6 @@
         <div class= "card" >
           <div class=" text-center text-align lovee-message">
             <p class="yellow-text"><strong> <%= challenge.title %> </strong> </p>
-            <p class="yellow-text">Task:</p>
             <h1 class="red-text"><strong>?</strong></h1>
           </div>
         </div>
@@ -16,15 +15,15 @@
     <% end %>
   </div>
 </div>
-<div class="container text-center">
-  <%= link_to "", new_booking_path(category_id: @category.id),class: "btn button-refresh fa fa-refresh"%>
-    <!-- <p> Refresh for a new random set <i class="fa fa-smile-o" aria-hidden="true"> </i> </p> -->
-</div>
+
 <br>
-<div class="container text-center">
+<div class="container text-center padded-bottom">
   <%= form_for @booking do |f| %>
     <%= hidden_field_tag "challenge_ids", @sorted_challenges.map(&:id) %>
-    <%= f.button :Play!, class: 'button-lovee' %>
+    <%= link_to new_booking_path(category_id: @category.id),class: "button-lovee button-lovee-small" do %>
+      Shuffle <i class="fa fa-refresh"></i>
+    <% end %>
+    <%= f.button "Pick one", class: 'button-lovee button-lovee-small' %>
   <% end %>
 </div>
 
