@@ -28,9 +28,6 @@ class BookingsController < ApplicationController
       end
   end
 
-  def challenge_
-
-
 
   private
    def set_booking
@@ -38,7 +35,7 @@ class BookingsController < ApplicationController
 
   def booking_params
     #params.permit(:seats, :country, :category)
-    params.require(:sorted_challenges).permit(:name, :picture, :coins)
+    params.require(:sorted_challenges).permit(:name, :picture, :kisses)
   end
 
 end

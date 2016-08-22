@@ -13,6 +13,7 @@ class BookingMailer < ApplicationMailer
       to:       @booking.user.email,
       subject:  "Booking created!"
     )
-
   end
+
+
 end
