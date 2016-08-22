@@ -18,24 +18,25 @@ class BookingsController < ApplicationController
 
   def create
     @booking = current_user.bookings.build(
-        challenge_id: params[:challenge_ids].split(/\s/).sample,
-        status: "created")
+      challenge_id: params[:challenge_ids].split(/\s/).sample,
+      status: "created")
     if @booking.save
       BookingMailer.challenge_validation(@booking).deliver_now
-        redirect_to @booking, notice: 'One challenge has been picked up !'
-      else
-        render :new
-      end
+      redirect_to @booking, notice: 'One challenge has been picked up !'
+    else
+      render :new
+    end
   end
 
 
   private
-   def set_booking
+  def set_booking
   end
 
   def booking_params
     #params.permit(:seats, :country, :category)
     params.require(:sorted_challenges).permit(:name, :picture, :kisses)
   end
+
 
 end

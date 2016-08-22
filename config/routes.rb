@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/team", to: "pages#team"
   get "/request_challenge", to: "pages#request_challenge"
   get "invite", to: "invitations#invite"
+  get "/dashboard", to: "pages#dashboard"
 
 
 
