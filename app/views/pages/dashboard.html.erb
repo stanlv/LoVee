@@ -1,0 +1,38 @@
+<h1 class="title text-center">Your dashboard</h1>
+
+<div class="container">
+<div class="text-center">
+  <%= image_tag current_user.facebook_picture_url, class: "avatar-large" %>
+</div>
+
+  <div class="dashboard-frame">
+    <div class="row">
+      <div class="col-xs-6">
+        <h2 class="yellow-text">Title</h2>
+      </div>
+      <div class="col-xs-3">
+        <h2 class="yellow-text">
+          Kisses
+        </h2>
+      </div>
+      <div class="col-xs-3">
+        <h2 class="yellow-text">
+          Status
+        </h2>
+      </div>
+    </div>
+    <% @bookings.each do |booking| %>
+      <div class="row">
+        <div class="col-xs-6 ">
+          <p><%= booking.challenge.title %></p>
+        </div>
+        <div class="col-xs-3">
+          <p><%= booking.challenge.category.kisses %>100</p>
+        </div>
+        <div class="col-xs-3">
+          <p><%= booking.status %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
