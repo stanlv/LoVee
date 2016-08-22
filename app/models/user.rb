@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :bookings
   has_many :challenges, through: :bookings
-  belongs_to :partner, :class_name => 'User'
+  belongs_to :partner, class_name: "User"
 
 
   after_create :send_welcome_email
