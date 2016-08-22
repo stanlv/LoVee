@@ -1,7 +1,8 @@
 <h1> Hi <%= @booking.user.email %> </h1>
 
-<h2> a Challenge has been offer to your partner </h2>
+<h2> a Challenge has been selected to offer to your partner </h2>
 <h2> title of challenge : <%= @booking.challenge.title %> </h2>
 <h2> Description of challenge : <%= @booking.challenge.description %> </h2>
 <h2> Awards: <%= @booking.challenge.category.kisses %> </h2>
-<h2> Awards: <%= link_to "see the challenge", booking_url(@booking)%> </h2>
+
+<h2> <%= link_to "add your partner ", booking_url(@booking)%> </h2>
