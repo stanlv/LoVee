@@ -1,10 +1,10 @@
 class InvitationsController < ApplicationController
 
   def invite
-    # send the mail with invite link /users/signup?user_id=current_user.id
+    # send mail with link to /users/signup?partner_id=45
 
-    notice = "We have invited your partner #{params[:email]}"
-    # send mail with link to /users/signup?user_id=45
+    flash[:notice] = "We have invited your partner #{params[:email]}"
+    redirect_to dashboard_path
   end
 
 end

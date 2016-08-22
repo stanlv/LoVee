@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :partner, class_name: "User"
 
 
-  after_create :send_welcome_email
+  after_create :send_welcome_email, :assign_partner
 
 
   def self.find_for_facebook_oauth(auth)
@@ -37,4 +37,12 @@ class User < ActiveRecord::Base
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
+  def assign_partner
+    if partner_id
+      partner = User.find(partner_id)
+      partner.partner_id = id
+      partner.save
+    end
+  end
+
 end
