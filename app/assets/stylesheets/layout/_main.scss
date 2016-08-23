@@ -49,3 +49,13 @@ body {
   margin: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: $yellow;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $red;
+}

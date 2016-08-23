@@ -8,7 +8,6 @@
   transition: all 0.7s ease;
   background: 0;
   margin-bottom: 10px;
-  background: $yellow-rgba-light;
   &-small {
     font-size: 23px;
     margin: 2px;
@@ -21,6 +20,29 @@
   &-modal:hover {
     background: white;
   }
+
+  &-devise {
+    color: $yellow;
+    margin-top: 25px;
+    border: 1.5px solid $yellow;
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 8px 15px;
+    background: 0;
+  }
+  a {
+    text-decoration: none;
+    color: $yellow;
+    transition: all 0.7s ease;
+  }
+  a:hover {
+    color: $red;
+  }
+}
+
+#devise-login {
+  font-size: 25px;
+  margin-top: 5px;
 }
 
 .button-lovee:hover {
@@ -28,4 +50,5 @@
   border: 1.5px solid $red;
   text-decoration: none;
   color: $red;
+  background: 0;
 }
