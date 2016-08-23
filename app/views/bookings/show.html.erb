@@ -8,7 +8,7 @@
           <p> <strong> LoVee </strong> selected the following awesome challenge for you:</p>
           <h3 class="red-text"><%= @booking.challenge.title %></h3>
           <p><%= @booking.challenge.description %></p>
-          <p><%= @booking.challenge.category.kisses %> kisses</p>
+          <p><%= @booking.challenge.category.kisses %>  <%= image_tag "tiny_kiss.png" %></p>
         </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
         <div class= "card" >
           <div class=" text-center text-align send-message">
             <% if current_user.partner_id.nil? %>
-              <p>You need a partner to play</p>
+              <p class="yellow-text">You need a partner to play</p>
               <%= link_to t(".top_call_to_action", default: "Add your partner"), "" , class: "button-lovee button-lovee-small  btn", "data-toggle" => "modal", "data-target" => "#invitation" %>
             <% else %>
               <%= link_to t(".top_call_to_action", default: " Good luck "), dashboard_path , class: "button-lovee button-lovee-small  btn" %>
