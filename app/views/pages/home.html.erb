@@ -33,9 +33,11 @@
           <% end %>
         </li>
         <% else %>
-          <%= link_to new_user_session_path do %>
-            <i class="fa fa-sign-in"></i> <%= t(".sign_in", default: "Login") %>
-          <% end%>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-sign-in"></i> <%= t(".sign_in", default: "Login") %>
+            <% end%>
+          </li>
         <% end %>
       </ul>
     </div>
@@ -51,16 +53,20 @@
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
+          <%= link_to dashboard_path do %>
+
         <div class="dropdown">
-          <% options = {class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"} %>
-          <% if user_signed_in? && current_user.facebook_picture_url %>
-          <%= image_tag current_user.facebook_picture_url, options %>
-          <span class="badge badge-coins">256</span>
-          <% else %>
-          <%= image_tag "avatar_default.png", options %>
-          <span class="badge badge-coins">256</span>
-          <% end %>
+          <% options = {class: "avatar dropdown-toggle", id: "navbar-wagon-menu"} %>
+            <% if current_user.facebook_picture_url %>
+              <%= image_tag current_user.facebook_picture_url, options %>
+              <span class="badge badge-coins">256</span>
+            <% else %>
+              <%= image_tag "avatar_default.png", options %>
+              <span class="badge badge-coins">256</span>
+            <% end %>
+
         </div>
+        <% end %>
       </div>
 
       <% else %>
