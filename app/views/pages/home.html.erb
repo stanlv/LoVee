@@ -6,11 +6,37 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle menu-icon" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu navbar-wagon-dropdown-menu">
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Anniversaries</a></li>
-        <li><a href="#">Buy coins</a></li>
-        <li><a href="#">Home</a></li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to edit_user_registration_path do %>
+            <i class="fa fa-pencil-square-o"></i>  Edit Profile
+          <% end %>
+        </li>
+        <li>
+          <%= link_to dashboard_path do %>
+            <i class="fa fa-bar-chart"></i>  Dashboard
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#' do %>
+            <i class="fa fa-calendar"></i>  Anniversaries
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#' do %>
+            <i class="fa fa-heart"></i>  Buy kisses
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: " Log out") %>
+          <% end %>
+        </li>
+        <% else %>
+          <%= link_to new_user_session_path do %>
+            <i class="fa fa-sign-in"></i> <%= t(".sign_in", default: "Login") %>
+          <% end%>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -29,21 +55,11 @@
           <% options = {class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"} %>
           <% if user_signed_in? && current_user.facebook_picture_url %>
           <%= image_tag current_user.facebook_picture_url, options %>
+          <span class="badge badge-coins">256</span>
           <% else %>
           <%= image_tag "avatar_default.png", options %>
+          <span class="badge badge-coins">256</span>
           <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
-            <li>
-              <%= link_to '#' do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
         </div>
       </div>
 
