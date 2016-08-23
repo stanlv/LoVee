@@ -29,7 +29,8 @@ class CategoriesController < ApplicationController
 
   def category_params
     #params.permit(:seats, :country, :category)
-    params.require(:category).permit(:name, :picture, :coins)
+    params.require(:category).permit(:name, :picture, :kisses)
+    @gender = challenge.gender
   end
 
 end

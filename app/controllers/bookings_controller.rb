@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
 
   def booking_params
     #params.permit(:seats, :country, :category)
-    params.require(:sorted_challenges).permit(:name, :picture, :kisses)
+    params.require(:sorted_challenges).permit(:name, :picture, :kisses, :gender)
   end
 
   def sent_notification
