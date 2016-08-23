@@ -8,5 +8,17 @@ color: #2D4059;
 font-weight: bold;
 }
 
-.button-gender {
+.button-rules:hover {
+  opacity: 1;
+  border: 1.5px solid $red;
+  text-decoration: none;
+  color: $red;
+  background-color: white;
+}
+
+.gender-list {
+display: flex;
+align-item: center;
+justify-content: center;
+
 }
