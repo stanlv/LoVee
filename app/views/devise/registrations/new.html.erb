@@ -4,6 +4,7 @@
     <div class= "card" >
      <div class=" text-center text-align lovee-message">
       <h2>Sign up</h2>
+      <%= render 'devise/shared/fb' %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
@@ -15,7 +16,7 @@
         <%= f.input :password_confirmation, required: true %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, "Sign up", class: "button-lovee button-lovee-devise", id: "devise-login" %>
       </div>
       <% end %>
       <%= render "devise/shared/links" %>
