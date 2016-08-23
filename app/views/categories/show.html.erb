@@ -8,7 +8,7 @@
         <div class= "card" >
           <div class=" text-center text-align lovee-message">
             <p class="yellow-text"><strong> <%= challenge.title %> </strong> </p>
-            <p class="yellow-text">Task:</p>
+            <p class="yellow-text">Description: </p>
             <h1 class="red-text"><strong>?</strong></h1>
           </div>
         </div>
@@ -16,13 +16,13 @@
     <% end %>
   </div>
 </div>
-<div class="container text-center">
-  <%= link_to "", category_path(@category),class: "btn button-refresh fa fa-refresh"%>
-    <!-- <p> Refresh for a new random set <i class="fa fa-smile-o" aria-hidden="true"> </i> </p> -->
-</div>
 <br>
-<div class="container text-center">
- <%= link_to t(".top_call_to_action", default: "Play!"), new_user_session_path , class: "button-lovee btn" %>
+<div class="container text-center padded-bottom">
+  <%= link_to category_path(@category), class: "button-lovee button-lovee-small" do %>
+    Shuffle <i class="fa fa-refresh"></i>
+  <% end %>
+  <%= link_to new_user_session_path, class: "button-lovee button-lovee-small" do%>
+     Pick one <i class="fa fa-gamepad">
+  <% end %>
 </div>
-
 
