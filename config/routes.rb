@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'pages#home'
 
-  devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
 
   resources :categories, only: [:create, :index, :show] do
     resources :challenges, only: [:create, :index, :show, :destroy]
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:new, :create, :show, :index, :destroy]
 
   get "/play", to: "pages#play"
+  get "/gender", to: "pages#gender"
   get "/team", to: "pages#team"
   get "/request_challenge", to: "pages#request_challenge"
   get "invite", to: "invitations#invite"
