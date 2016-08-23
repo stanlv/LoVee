@@ -24,7 +24,9 @@
     <%= link_to new_booking_path(category_id: @category.id),class: "button-lovee button-lovee-small" do %>
       Shuffle <i class="fa fa-refresh"></i>
     <% end %>
-    <%= f.button "Pick one", class: 'button-lovee button-lovee-small' %>
+    <%= f.button :button, class: 'button-lovee button-lovee-small' do %>
+      Pick up <i class="fa fa-gamepad"></i>
+    <% end %>
   <% end %>
 </div>
 
