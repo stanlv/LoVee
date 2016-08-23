@@ -8,13 +8,14 @@
           <p> <strong> LoVee </strong> selected the following awesome challenge for you:</p>
           <h3 class="red-text"><%= @booking.challenge.title %></h3>
           <p><%= @booking.challenge.description %></p>
-          <p><%= @booking.challenge.category.kisses %> kisses</p>
+          <p><%= @booking.challenge.category.kisses %>  <%= image_tag "tiny_kiss.png" %></p>
         </div>
         </div>
       </div>
     </div>
   </div>
 
+  <br>
 
   <div class="container">
     <div class="row">
@@ -22,7 +23,7 @@
         <div class= "card" >
           <div class=" text-center text-align send-message">
             <% if current_user.partner_id.nil? %>
-              <p>You need a partner to play</p>
+              <p class="subheading">You need a partner to play</p>
               <%= link_to t(".top_call_to_action", default: "Add your partner"), "" , class: "button-lovee button-lovee-small  btn", "data-toggle" => "modal", "data-target" => "#invitation" %>
             <% else %>
               <%= link_to t(".top_call_to_action", default: " Good luck "), dashboard_path , class: "button-lovee button-lovee-small  btn" %>
@@ -39,15 +40,20 @@
 <!-- Modal -->
 <div class="modal fade" id="invitation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content lovee-modal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Invite your partner</h4>
+        <h4 class="modal-title text-center heading-blue" id="myModalLabel">Invite your partner</h4>
       </div>
       <div class="modal-body">
         <%= form_tag invite_path, method: :get do %>
-          <%= email_field_tag :email, nil, class: "form-control" %>
-          <%= submit_tag "invite", class: "btn btn-primary" %>
+        <br>
+          <p class="text-center">Your partner's email</p>
+          <%= email_field_tag :email, nil, class: "form-control", placeholder: "partner@lovee.com" %>
+          <br>
+          <div class="text-center">
+            <%= submit_tag "invite", class: "button-lovee button-lovee-modal" %>
+          </div>
         <% end %>
       </div>
     </div>

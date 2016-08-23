@@ -13,6 +13,14 @@
     font-size: 23px;
     margin: 2px;
   }
+  &-modal {
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 8px 15px;
+  }
+  &-modal:hover {
+    background: white;
+  }
 }
 
 .button-lovee:hover {

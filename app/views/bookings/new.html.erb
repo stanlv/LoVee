@@ -1,5 +1,5 @@
 <h2 class="heading-yellow text-center">Category - <%= @category.name%></h2>
-<h3 class="subheading text-center">Kisses earnable: <strong><%= @category.kisses %></strong></h3>
+<h3 class="subheading text-center"> <strong><%= @category.kisses %></strong>  <%= image_tag "tiny_kiss.png" %></h3>
 <div class="container">
   <div class="row">
     <% @sorted_challenges.each do |challenge| %>
