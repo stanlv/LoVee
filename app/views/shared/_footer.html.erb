@@ -1,23 +1,26 @@
 <div class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-3">
+      <div class="col-xs-12 col-sm-4">
         <ul class="list-inline">
         <li><a href=""><i class="fa fa-instagram"></i></a></li>
           <li><a href=""><i class="fa fa-facebook"></i></a></li>
           <li><a href=""><i class="fa fa-twitter"></i></a></li>
         </ul>
       </div>
-      <div class="col-xs-12 col-md-4 text-right">
-        <p class="footer-copyright">Made with <i class="fa fa-heart-o" aria-hidden="true"></i> for the love</p>
-      </div>
-      <div class="col-xs-12 col-md-4 text-right">
+
+      <div class="col-xs-12 col-sm-4 text-center">
         <ul class="list-unstyled">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Press</a></li>
+          <li><%= link_to "Team", team_path %></li>
+          <li><%= link_to "About", "#" %></li>
+          <li><%= link_to "Buy kisses", "#" %></li>
         </ul>
       </div>
+
+      <div class="col-xs-12 col-sm-4 text-right">
+        <p class="footer-copyright">Made with <i class="fa fa-heart-o" aria-hidden="true"></i> for the love</p>
+      </div>
+
     </div>
   </div>
 </div>
