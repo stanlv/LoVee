@@ -1,20 +1,23 @@
 <div class="modal fade" data-keyboard="false" data-backdrop="static" id="gender" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content lovee-modal">
       <div class="modal-header">
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-        <h4 class="modal-title text-center lovee-message">Make LoVee yours</h4>
-        <p class="text-center"> Please select your gender</p>
+        <h3 class="modal-title text-center">Make LoVee yours</h3>
       </div>
-      <div class="modal-body">
-
+      <div class="modal-body text-center">
+      <p>Please select your gender </p>
         <%= simple_form_for(current_user, url: user_registration_path, html: { method: :patch }) do |f| %>
           <%= f.error_notification %>
-          <div class="form-inputs">
-            <%= f.input :gender, :collection => %w[male female]%>
+          <div class="form-actions text-center">
+            <%= f.button :button, class:"btn button-lovee button-gender", value: 'Male', name: 'user[gender]' do %>
+             <i class="fa fa-mars"></i>
+            <% end %>
           </div>
           <div class="form-actions text-center">
-            <%= f.button :submit, " Yeah ", class:"btn lovee-button" %>
+            <%= f.button :button, " Female ", class:"btn button-lovee button-gender", value: 'Female', name: 'user[gender]' do %>
+            <i class="fa fa-venus"></i>
+            <% end %>
           </div>
         <% end %>
 
