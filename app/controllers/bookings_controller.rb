@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :sorted_challenges, only: [:index]
   before_action :set_booking, only: [:show]
+  after_action :sent_notification, only: [:create]
 
   def index
 
@@ -21,7 +22,6 @@ class BookingsController < ApplicationController
       challenge_id: params[:challenge_ids].split(/\s/).sample,
       status: "created")
     if @booking.save
-      BookingMailer.challenge_validation(@booking).deliver_now
       redirect_to @booking, notice: 'One challenge has been picked up !'
     else
       render :new
@@ -39,5 +39,11 @@ class BookingsController < ApplicationController
     params.require(:sorted_challenges).permit(:name, :picture, :kisses)
   end
 
+  def sent_notification
+    if current_user.partner
+      @myemail = current_user.email
+      BookingMailer.challenge_notification(@booking, @myemail).deliver_now
+    end
+  end
 
 end
