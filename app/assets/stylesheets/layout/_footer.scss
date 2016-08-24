@@ -2,15 +2,25 @@
 //
 .footer {
   background: #2D4059;
-  padding: 30px 0;
+  padding: 10px 15px;
   color: white;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  margin-top: 20px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
 }
-.footer ul {
+#icons-list {
+  margin-top: 17px;
+}
+
+#links-list {
   margin-top: 10px;
+  margin-bottom: 2px;
 }
 .footer a {
   color: white;
@@ -28,8 +38,8 @@
 .footer a:hover{
   color: #FF936F;
 }
-.footer p {
-  margin-top: 17px;
+.footer-copyright {
+  padding-top: 25px;
 }
 
 @media (max-width: $screen-sm) {
