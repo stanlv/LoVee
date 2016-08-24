@@ -10,7 +10,7 @@ Category.create(name: "Romantic", kisses: 200)
 Category.create(name: "Adventure", kisses: 100)
 Category.create(name: "Spicy", kisses: 300)
 
-Challenge.create(title: "Challenge 1"description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.first.id)
+Challenge.create(title: "Challenge 1",description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.first.id)
 Challenge.create(title: "Challenge 2", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.first.id)
 Challenge.create(title: "Challenge 3", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.first.id)
 Challenge.create(title: "Challenge 4", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.first.id)
@@ -29,7 +29,7 @@ Challenge.create(title: " challenge 14", description: "This is what you have to 
 Challenge.create(title: " challenge 15", description: "This is what you have to do",gender: "female", deadline: 10, category_id: Category.first.id)
 
 
-Challenge.create(title: "Challenge 1"description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.second.id)
+Challenge.create(title: "Challenge 1", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.second.id)
 Challenge.create(title: "Challenge 2", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.second.id)
 Challenge.create(title: "Challenge 3", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.second.id)
 Challenge.create(title: "Challenge 4", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.second.id)
@@ -48,7 +48,7 @@ Challenge.create(title: " challenge 14", description: "This is what you have to 
 Challenge.create(title: " challenge 15", description: "This is what you have to do",gender: "female", deadline: 10, category_id: Category.second.id)
 
 
-Challenge.create(title: "Challenge 1"description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.last.id)
+Challenge.create(title: "Challenge 1", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.last.id)
 Challenge.create(title: "Challenge 2", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.last.id)
 Challenge.create(title: "Challenge 3", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.last.id)
 Challenge.create(title: "Challenge 4", description: "This is what you have to do",gender: "male", deadline: 10, category_id: Category.last.id)
