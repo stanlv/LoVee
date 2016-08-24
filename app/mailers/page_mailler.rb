@@ -9,3 +9,4 @@ class PageMailer < ApplicationMailer
     @email = email
     mail(to: booking.user.partner.email, subject: 'Challenge Completed?')
  end
+end
