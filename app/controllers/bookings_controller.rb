@@ -12,8 +12,9 @@ class BookingsController < ApplicationController
 
   def new
     @category = Category.find(params[:category_id])
+    gender = current_user.gender
     @old_challenges_ids = current_user.bookings.map(&:challenge_id)
-    @sorted_challenges = Challenge.where(category_id: @category.id).where.not(id: @old_challenges_ids).random
+    @sorted_challenges = Challenge.where(category_id: @category.id, gender: gender).where.not(id: @old_challenges_ids).random
     @booking = Booking.new
   end
 
