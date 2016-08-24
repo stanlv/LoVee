@@ -13,7 +13,11 @@ ActiveAdmin.register Challenge do
 #   permitted
 # end
 
-  permit_params :title, :description, :deadline, :category_id
+  permit_params :title, :description, :deadline, :category_id, :gender
+
+# Active Admin CSV Import gem config
+#
+# csv_importable :columns => [:category_id, :title, :description, :deadline, :gender]
 
 
 # Customizing the index form for challenge
