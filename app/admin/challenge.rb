@@ -19,6 +19,8 @@ ActiveAdmin.register Challenge do
 #
 # csv_importable :columns => [:category_id, :title, :description, :deadline, :gender]
 
+# active_admin_import
+
 
 # Customizing the index form for challenge
 #
