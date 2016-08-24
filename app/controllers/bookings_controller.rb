@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :sorted_challenges, only: [:index]
   before_action :set_booking, only: [:show]
+  after_action :sent_notification, only: [:create]
 
   def index
 
@@ -36,8 +37,14 @@ class BookingsController < ApplicationController
 
   def booking_params
     #params.permit(:seats, :country, :category)
-    params.require(:sorted_challenges).permit(:name, :picture, :kisses)
+    params.require(:sorted_challenges).permit(:name, :picture, :kisses, :gender)
   end
 
+  def sent_notification
+    if current_user.partner
+      @myemail = current_user.email
+      BookingMailer.challenge_notification(@booking, @myemail).deliver_now
+    end
+  end
 
 end

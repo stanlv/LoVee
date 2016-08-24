@@ -5,13 +5,14 @@ class BookingMailer < ApplicationMailer
   #
   #   en.booking_mailer.challenge_validation.subject
   #
-  def challenge_validation(booking)
+  def challenge_notification(booking, email)
     @booking = booking
     @greeting = "Hi"
+    @email = email
 
      mail(
-      to:       @booking.user.email,
-      subject:  "Booking created!"
+      to:       @booking.user.partner.email,
+      subject:  "Booking offered!"
     )
   end
 
