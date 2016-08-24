@@ -8,7 +8,7 @@ class InvitationMailer < ApplicationMailer
 
      mail(
       to:       @email,
-      subject:  "join the LoVee Game"
+      subject:  "Join the LoVee Game"
     )
   end
 
