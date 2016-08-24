@@ -1,12 +1,11 @@
 <div class="text-center">
   <h1 class="title ">Your dashboard</h1>
 
-  <% random_quotes = ["Love takes off masks that we fear we cannot live without and know we cannot live within. James Baldwin", " The most important thing in life is to learn how to give out love, and to let it come in. Morrie Schwartz", "If I know what love is, it is because of you. Herman Hesse", "Love is a friendship set to music. Joseph Campbell", "We are shaped and fashioned by what we love. Johann Wolfgang von Goethe","When we are in love we seem to ourselves quite different from what we were before. Blaise Pascal", "The way to love anything is to realize that it may be lost. Gilbert K. Chesterton", "Don’t brood. Get on with living and loving. You don’t have forever. Leo Buscaglia ", "Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it. Rumi", "Love is of all passions the strongest, for it attacks simultaneously the head, the heart and the senses. Lao Tzu", "You know it’s love when all you want is that person to be happy, even if you’re not part of their happiness. Julia Roberts" , "The best and most beautiful things in this world cannot be seen or even heard, but must be felt with the heart. Helen Keller" , "Keep love in your heart. A life without it is like a sunless garden when the flowers are dead. Oscar Wilde" , "The only thing we never get enough of is love; and the only thing we never give enough of is love. Henry Miller", "Lots of people want to ride with you in the limo, but what you want is someone who will take the bus with you when the limo breaks down. Oprah Winfrey " , "You know you’re in love when you don’t want to fall asleep because reality is finally better than your dreams. Dr. Seuss"
-] %>
-  <%= random_quotes.sample %>
+
+<!--   <#% random_quotes = ["Love takes off masks that we fear we cannot live without and know we cannot live within. James Baldwin", " The most important thing in life is to learn how to give out love, and to let it come in. Morrie Schwartz", "If I know what love is, it is because of you. Herman Hesse", "Love is a friendship set to music. Joseph Campbell", "We are shaped and fashioned by what we love. Johann Wolfgang von Goethe","When we are in love we seem to ourselves quite different from what we were before. Blaise Pascal", "The way to love anything is to realize that it may be lost. Gilbert K. Chesterton", "Don’t brood. Get on with living and loving. You don’t have forever. Leo Buscaglia ", "Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it. Rumi", "Love is of all passions the strongest, for it attacks simultaneously the head, the heart and the senses. Lao Tzu", "You know it’s love when all you want is that person to be happy, even if you’re not part of their happiness. Julia Roberts" , "The best and most beautiful things in this world cannot be seen or even heard, but must be felt with the heart. Helen Keller" , "Keep love in your heart. A life without it is like a sunless garden when the flowers are dead. Oscar Wilde" , "The only thing we never get enough of is love; and the only thing we never give enough of is love. Henry Miller", "Lots of people want to ride with you in the limo, but what you want is someone who will take the bus with you when the limo breaks down. Oprah Winfrey " , "You know you’re in love when you don’t want to fall asleep because reality is finally better than your dreams. Dr. Seuss"
+] %> -->
+  <%#= random_quotes.sample %>
 </div>
-
-
 
 <div class="container">
 <div class="text-center">
@@ -47,7 +46,7 @@
         </div>
         <% if booking.status == "created" %>
           <div class="col-xs-2">
-            <%= link_to "Done?", "#", class: "btn btn-success" %>
+            <a href="#" data-toggle="modal" data-target="#request-sent" class="btn btn-primary">?</a>
             <!-- <button type="button", class="btn btn-success"> Done? </button> -->
           </div>
         <% end %>
@@ -57,5 +56,23 @@
 </div>
 
 
-
+<!-- modal -->
+<div class="modal fade" id="request-sent" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content lovee-modal">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title text-center heading-blue">Confirmation request sent</h3>
+      </div>
+      <div class="modal-body text-center">
+        A confirmation request has been sent to your partner! You will get your LoVee kisses as soon as they confirm you completed this challenge.
+        <div class="modal-footer">
+          <div class="text-center">
+            <button type="button" class="btn button-lovee button-rules button-lovee-small" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 

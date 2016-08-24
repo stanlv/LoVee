@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    session[:show_category_counter] = session[:show_category_counter].nil? ? 1 : session[:show_category_counter] + 1
     @challenges = Challenge.where(category_id: @category.id)
     if user_signed_in?
       gender = user.gender
