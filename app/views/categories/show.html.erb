@@ -1,4 +1,5 @@
-<h2 class="heading-yellow text-center">Category - <%= @category.name%></h2>
+<br>
+<h2 class="heading-blue text-center">Category - <%= @category.name%></h2>
 <h3 class="subheading text-center"><strong><%= @category.kisses %></strong>  <%= image_tag "tiny_kiss.png" %></h3>
 <div class="container">
   <div class="row">
@@ -8,8 +9,8 @@
         <div class= "card" >
           <div class=" text-center text-align lovee-message">
             <p class="yellow-text"><strong> <%= challenge.title %> </strong> </p>
-            <p class="yellow-text">Description: </p>
-            <h1 class="red-text"><strong>?</strong></h1>
+            <p class="yellow-text"> <%= challenge.description %> </p>
+            <!-- <h1 class="red-text"><strong>?</strong></h1> -->
           </div>
         </div>
       </div>
@@ -22,7 +23,7 @@
     Shuffle <i class="fa fa-refresh"></i>
   <% end %>
   <%= link_to new_user_session_path, class: "button-lovee button-lovee-small" do%>
-     Pick one <i class="fa fa-gamepad"></i>
+     Get one <i class="fa fa-gamepad"></i>
   <% end %>
 </div>
 
@@ -31,12 +32,23 @@
     <div class="modal-content lovee-modal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title text-center">LoVee rules </h3>
+        <h3 class="modal-title text-center heading-blue"><i class="fa fa-gamepad"></i> How to play </h3>
       </div>
       <div class="modal-body text-center">
-        <p>jdfndjdjdjdjdjdjd</p>
+        <i class="fa fa-random fa-3x marginized"></i>
+        <p>You are presented with three <strong>random</strong> challenges</p>
+
+        <i class="fa fa-play fa-3x marginized"></i>
+        <p>When you click play, you will be assigned <strong>ONE</strong> of these challenges</p>
+
+        <i class="fa fa-refresh fa-3x marginized"></i>
+        <p>If you are unhappy with the selection of challenges, click shuffle!</p>
+
+
         <div class="modal-footer">
-          <button type="button" class="btn button-lovee button-rules" data-dismiss="modal">Got it</button>
+          <div class="text-center">
+            <button type="button" class="btn button-lovee button-rules button-lovee-small" data-dismiss="modal">Got it</button>
+          </div>
         </div>
       </div>
     </div><!-- /.modal-content -->
