@@ -23,6 +23,12 @@ gem 'omniauth-facebook'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+# Gem for Active_admin CSV import
+# https://github.com/Papercloud/active_admin_csv_import
+# (an alternative is also https://github.com/activeadmin-plugins/active_admin_import )
+# gem 'active_admin_csv_import'
+gem "active_admin_import" , github: "activeadmin-plugins/active_admin_import"
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
@@ -30,7 +36,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  gem "letter_opener"
+  gem 'letter_opener'
+  gem 'seed_dump'
 
 
 end

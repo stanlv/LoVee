@@ -13,7 +13,7 @@ ActiveAdmin.register Category do
 #   permitted
 # end
 
-  permit_params :name, :picture, :coins
+  permit_params :name, :picture, :kisses
 
   # Customizing the index form for Category
   #
@@ -22,7 +22,7 @@ ActiveAdmin.register Category do
     column :id
     column :name
     column :picture
-    column :coins
+    column :kisses
     column :created_at
     column :updated_at
     actions
