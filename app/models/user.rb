@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :partner, class_name: "User"
 
 
-  after_create :send_welcome_email, :assign_partner
-
+  after_create :send_welcome_email, :assign_partner, :assign_partner_via_email
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
@@ -37,6 +36,14 @@ class User < ActiveRecord::Base
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
+
+  def assign_partner_via_email
+    partner = User.where(partner_email: email).first
+    return nil unless partner
+    partner.update(partner_id: id)
+    update(partner_id: partner.id)
+  end
+
   def assign_partner
     if partner_id
       partner = User.find(partner_id)
@@ -44,5 +51,4 @@ class User < ActiveRecord::Base
       partner.save
     end
   end
-
 end
