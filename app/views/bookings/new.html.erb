@@ -20,17 +20,33 @@
 </div>
 
 <br>
+
+
+
+
 <div class="container text-center padded-bottom">
-  <%= form_for @booking do |f| %>
-    <%= hidden_field_tag "challenge_ids", @sorted_challenges.map(&:id) %>
-    <%= link_to new_booking_path(category_id: @category.id),class: "button-lovee button-lovee-small" do %>
-      Shuffle <i class="fa fa-refresh"></i>
-    <% end %>
-    <%= f.button :button, class: 'button-lovee button-lovee-small' do %>
-      Get one <i class="fa fa-gamepad"></i>
-    <% end %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="aligner right">
+        <%= link_to new_booking_path(category_id: @category.id),class: "button-lovee button-lovee-small" do %>
+          Shuffle <i class="fa fa-refresh"></i>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="left">
+        <%= form_for @booking do |f| %>
+          <%= hidden_field_tag "challenge_ids", @sorted_challenges.map(&:id) %>
+          <%= f.button :button, class: 'button-lovee button-lovee-small' do %>
+            Get one <i class="fa fa-gamepad"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 <br>
 <div class="text-center">
   <a href="#" data-toggle="modal" data-target="#rules" class="btn btn-primary">?</a>
