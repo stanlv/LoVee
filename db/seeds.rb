@@ -9,6 +9,7 @@
 Category.create(name: "Romantic", kisses: 200)
 Category.create(name: "Adventure", kisses: 100)
 Category.create(name: "Spicy", kisses: 500)
+
 Challenge.create(title: " Back massage  ", description: " Have all ready for when your love arrives at home: nice relaxing music, a candle lit and have him /her... ", gender: "Male", deadline:  5, category_id:  Category.first.id)
 Challenge.create(title: " Full body massage ", description: " Have all ready for when your love arrives at home: nice relaxing music, a candle lit and have him /her... ", gender: "Male", deadline:  5, category_id:  Category.first.id)
 Challenge.create(title: " Play date ", description: " Break away from the dinner-and-movie pattern by opting instead for a play date. Try one of your favorite old-school activities, like hitting a roller rink, laser tag center or arcade. Cap it all off with an indulgent meal from one of your fave childhood eateries, like Medieval Times or McDonald's.  ", gender: "Female", deadline:  5, category_id:  Category.first.id)
@@ -29,3 +30,4 @@ Challenge.create(title: " Toy store spree ", description: " Venture out on a sho
 Challenge.create(title: " Role play roulette  ", description: " Mix things up by trying your hand at role-play. Don't limit yourself to the same old stuff. Be creative and come up with cool scenarios, like rock star and groupieyour groupie.  ", gender: "Male", deadline:  5, category_id:  Category.last.id)
 Challenge.create(title: " Spicy vacation  ", description: " Even studies have proven that vacation sex is one of the hottest varieties. Too broke to jet off to the Caribbean? Experience the same fresh change of scene by indulging in a staycation. Check into a hotel of your picking and kick back with a killer bottle of wine and some room service. Don't forget to score a few dirty looks from stodgy older guests by playing some of your favorite throwback games in the indoor pool. ", gender: "Female", deadline:  5, category_id:  Category.last.id)
 Challenge.create(title: " Clothes trail ", description: " Before your guy gets home, leave a trail of your clothes from the front door to the bedroom. When he finally appears, expecting an explanation for the mess, he'll be too dumbfounded by the sight of a stripped-down you to do anything other than pounce. ", gender: "Male", deadline:  5, category_id:  Category.last.id)
+
