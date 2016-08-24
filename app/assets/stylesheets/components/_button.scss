@@ -45,6 +45,10 @@
   margin-top: 5px;
 }
 
+.gender-btn:hover {
+    background-color:white !important;
+  }
+
 .button-lovee:hover {
   opacity: 1;
   border: 1.5px solid $red;
@@ -52,3 +56,4 @@
   color: $red;
   background: 0;
 }
+
