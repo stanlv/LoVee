@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
     partner = User.where(partner_email: email).first
     return nil unless partner
     partner.update(partner_id: id)
-    update(partner_id: partner.id)
+    update(partner_id: partner.id, partner_email: partner.email)
   end
 
   def assign_partner
