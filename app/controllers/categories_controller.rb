@@ -8,9 +8,14 @@ class CategoriesController < ApplicationController
 
   def show
     @challenges = Challenge.where(category_id: @category.id)
-    @sorted_challenges = @challenges.random
+    if user_signed_in?
+      gender = user.gender
+      @gender_challenges = Challenge.where(gender: gender)
+      @sorted_challenges = @gender_challenges.random
+    else
+      @sorted_challenges = @challenges.random
+    end
   end
-
   def new
     @category = Category.new
   end
