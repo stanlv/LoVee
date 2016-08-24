@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @disable_nav = true
+    @disable_flashes = true
   end
 
   def play

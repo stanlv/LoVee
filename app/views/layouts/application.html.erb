@@ -11,7 +11,7 @@
   </head>
   <body>
     <%= render 'shared/navbar' unless @disable_nav%>
-    <%= render 'shared/flashes' %>
+    <%= render 'shared/flashes' unless @disable_flashes%>
     <div class="wrapper-body">
     <%= yield %>
     </div>
