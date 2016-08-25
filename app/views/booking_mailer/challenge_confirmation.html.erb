@@ -1,0 +1,6 @@
+<h2> hi <%= @partner.first_name %> </h2>
+<h2> Did <%= @user.first_name %> complete this challenge ?  </h2>
+<h2> <%= @booking.challenge.title %> </h2>
+
+<%= link_to' YES!!!!!!!!!', validate_challenge_url(booking_id: @booking.id) %>
+

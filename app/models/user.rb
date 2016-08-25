@@ -31,8 +31,10 @@ class User < ActiveRecord::Base
   end
 
   def total_kisses
-    return 100 if bookings.where(status: 'completed').empty?
-    bookings.where(status: 'completed').map(&:category).sum(&:kisses)
+    return 0 unless partner_id
+    earn = bookings.where(status: 'completed', spend: false).map(&:category).sum(&:kisses)
+    spend = bookings.where(spend: true).map(&:category).sum(&:kisses)
+    earn - spend + 50
   end
 
   private
