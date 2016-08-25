@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   get "/dashboard", to: "bookings#index"
   post "/confirm_challenge", to: "bookings#confirm_challenge"
   get "/validate_challenge", to: "bookings#validate_challenge"
+  get "/congrats", to: "congrats#show"
+
+  namespace :spend do
+    resources :bookings, only: [:new, :create]
+  end
 
 
 

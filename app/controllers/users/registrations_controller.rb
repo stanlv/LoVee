@@ -8,9 +8,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    byebug
+    if params[:user][:partner_id]
+      params[:user][:gender] = "female"
+      params[:user][:gender] = "male" if User.find(params[:user][:partner_id]).gender == "female"
+    end
+    super
+  end
 
   # GET /resource/edit
   # def edit
