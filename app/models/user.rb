@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :challenges, through: :bookings
   belongs_to :partner, class_name: "User"
 
+  validates :status, inclusion: { in: %w(created completed failed) } # ['created', 'completed', 'failed']
 
   after_create :send_welcome_email, :assign_partner, :assign_partner_via_email
 
@@ -29,6 +30,11 @@ class User < ActiveRecord::Base
     end
 
     return user
+  end
+
+  def total_kisses
+    return 200 if bookings.where(status: 'completed').empty?
+    bookings.where(status: 'completed').map(&:category).sum(&:kisses)
   end
 
   private
