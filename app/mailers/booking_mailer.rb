@@ -16,5 +16,17 @@ class BookingMailer < ApplicationMailer
     )
   end
 
+  def challenge_confirmation(booking, partner, user)
+    @booking = booking
+    @partner = partner
+    @user = user
+
+     mail(
+      to:       partner.email,
+      subject:  "Challenge to confirms "
+    )
+
+  end
+
 
 end

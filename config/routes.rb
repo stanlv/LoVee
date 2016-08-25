@@ -11,14 +11,16 @@ Rails.application.routes.draw do
     resources :challenges, only: [:create, :index, :show, :destroy]
   end
 
-  resources :bookings, only: [:new, :create, :show, :index, :destroy]
+  resources :bookings, only: [:new, :create, :show, :destroy]
 
   get "/play", to: "pages#play"
   get "/gender", to: "pages#gender"
   get "/team", to: "pages#team"
   get "/request_challenge", to: "pages#request_challenge"
   get "/invite", to: "invitations#invite"
-  get "/dashboard", to: "pages#dashboard"
+  get "/dashboard", to: "bookings#index"
+  post "/confirm_challenge", to: "bookings#confirm_challenge"
+  get "/validate_challenge", to: "bookings#validate_challenge"
 
 
 
