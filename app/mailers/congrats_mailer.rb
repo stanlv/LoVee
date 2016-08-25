@@ -1,7 +1,6 @@
 class CongratsMailer < ApplicationMailer
 
   def spend_challenge(user, booking, partner)
-    byebug
     @booking = booking
     @partner = partner
     @user = user
