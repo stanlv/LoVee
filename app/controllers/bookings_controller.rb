@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
   def confirm_challenge
     @booking = Booking.find(params[:booking_id])
     @booking.update(status: 'pending')
-    BookingMailer.challenge_confirmation(@booking, current_user.partner, current_user).deliver_now if current_user.partner
+    BookingMailer.challenge_confirmation(@booking.id, current_user.id).deliver_now if current_user.partner
 
     respond_to do |format|
       format.html { redirect_to dashboard_path }
