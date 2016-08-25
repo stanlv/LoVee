@@ -27,7 +27,7 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 # https://github.com/Papercloud/active_admin_csv_import
 # (an alternative is also https://github.com/activeadmin-plugins/active_admin_import )
 # gem 'active_admin_csv_import'
-gem "active_admin_import" , github: "activeadmin-plugins/active_admin_import"
+# gem "active_admin_import" , github: "activeadmin-plugins/active_admin_import"
 
 group :development, :test do
   gem 'binding_of_caller'
