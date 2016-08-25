@@ -1,0 +1,28 @@
+  <h1 class = "text-center title">Choose a category for your partner <%= current_user.partner.try(:name) if user_signed_in? %></h1>
+    <div class="container">
+      <div class="row">
+        <% @categories.each do |category| %>
+          <div class="col-xs-12 col-md-4">
+            <div class="category-card text-center">
+              <span class="category-card-link">
+                <h1 class="call-to-action-font"><%= category.name %></h1>
+                <%= image_tag category.picture, class: "category-card-image "%>
+                <h3>Buy for: <%= category.kisses %>  <%= image_tag "tiny_kiss.png" %>
+                </h3>
+                <%= form_for :category, {url: spend_bookings_path, method: :post} do |f| %>
+                  <%= f.hidden_field :id, value: category.id %>
+                  <%= f.button :button, class: 'button-lovee button-lovee-small' do %>
+                    Buy<i class="fa fa-gamepad"></i>
+                  <% end %>
+                <% end  %>
+              </span>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+<br>
+
+<div class="text-center">
+  <%= link_to "Back", play_path, class: "button-lovee button-lovee-small", id: "back"%>
+</div>

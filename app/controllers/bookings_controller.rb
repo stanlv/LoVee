@@ -16,9 +16,12 @@ class BookingsController < ApplicationController
   end
 
   def create
+    challenge = Challenge.find(params[:challenge_ids].split(/\s/).sample)
     @booking = current_user.bookings.build(
-      challenge_id: params[:challenge_ids].split(/\s/).sample,
+      challenge_id: challenge.id,
       status: "created", partner_id: current_user.partner_id, spend: false)
+    @booking.kisses = challenge.category.kisses
+
     if @booking.save
       BookingMailer.challenge_notification(@booking.id).deliver_now if current_user.partner
       redirect_to @booking, notice: 'One challenge has been assigned! Go to your dashboard to view it.'
