@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
       challenge_id: params[:challenge_ids].split(/\s/).sample,
       status: "created", partner_id: current_user.partner_id, spend: false)
     if @booking.save
-      BookingMailer.challenge_notification(@booking, @email).deliver_now if current_user.partner
+      BookingMailer.challenge_notification(@booking.id).deliver_now if current_user.partner
       redirect_to @booking, notice: 'One challenge has been assigned! Go to your dashboard to view it.'
     else
       set_challenges
