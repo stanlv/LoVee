@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>*|MC:SUBJECT|*</title>
+    <title>New LoVee challenge!</title>
 
     <style type="text/css">
     p{
@@ -642,7 +642,14 @@
 
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #2D4059;font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;text-align: left;">
 
-                            <h1 class="null"><span style="font-family:verdana,geneva,sans-serif">Your partner is doing a challenge for you!</span></h1>
+                            <h1 class="null"><span style="font-family:verdana,geneva,sans-serif">
+                            <% if @user.first_name.nil? %>
+                              <%= @user.email %>
+                            <% else %>
+                             <%= @user.first_name %>
+                            <% end %>
+
+                            is doing a challenge for you!</span></h1>
 <br>
 Your partner just started a new challenge. Return the favour and do a challenge too to earn LoVee hearts!<br>
 <br>

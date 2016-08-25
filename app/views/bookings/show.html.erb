@@ -25,6 +25,9 @@
             <% if current_user.partner_id.nil? %>
               <p class="subheading">You need a partner to play</p>
               <%= link_to t(".top_call_to_action", default: "Add your partner"), "" , class: "button-lovee button-lovee-small  btn", "data-toggle" => "modal", "data-target" => "#invitation" %>
+              <br>
+              <br>
+              <p><%= link_to "Or go to dashboard", dashboard_path%></p>
             <% else %>
               <%= link_to t(".top_call_to_action", default: " Good luck "), dashboard_path , class: "button-lovee button-lovee-small  btn" %>
             <% end %>
