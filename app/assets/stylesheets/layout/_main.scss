@@ -29,6 +29,13 @@ body {
   margin-top: 2px;
 }
 
+.challenge-heading{
+  font-size: 25px;
+  color: $red;
+  font-family: 'Lobster';
+  margin-top: 2px;
+}
+
 .subheading {
   font-size: 25px;
   font-weight: bolder;
@@ -79,4 +86,8 @@ a:hover {
   .right {
     text-align: center;
   }
+}
+
+.top {
+  height: 70px;
 }

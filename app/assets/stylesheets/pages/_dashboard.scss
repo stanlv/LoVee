@@ -12,10 +12,10 @@
   border-radius: 5px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
   background-color: $brand-color;
-  opacity: 0.8;
+  opacity: 0.9;
   padding: 10px 10px;
   color: white;
-  height: 270px;
+  height: 200px;
   position: relative;
   margin-bottom: 28px;
 }
@@ -40,17 +40,61 @@
 
 #kisses {
   position: absolute;
-  bottom: -168px;
+  bottom: 8px;
   left: 10px;
 
 }
 
 #booking-status{
   position: absolute;
-  top: 50px;
-  left: 100px;
+  bottom: 8px;
+  right: 10px;
 }
 
+
+.button-lovee-i-did-it {
+  border: 1.5px solid #2D4059;
+  border-radius: 50px;
+  transition: all 0.7s ease;
+  background: $red;
+  color: $yellow;
+  width: 200px;
+  padding: 5px 15px;
+  font-size: 18px;
+}
+
+.inner-padding {
+  padding: 5px 70px;
+}
+
+.top-margin-for-done {
+  margin-top: 15px;
+}
+
+#waiting {
+    background: $yellow;
+    width: 200px;
+    color: $brand-color;
+    margin: 10px auto;
+}
+
+#completed {
+  background: #70A8C5;
+  width: 200px;
+  color: white;
+  margin: 10px auto;
+}
+
+.button-lovee-i-did-it:hover {
+  opacity: 1;
+  border: 1.5px solid $red;
+  text-decoration: none;
+  color: $red;
+  background: white;
+  text-decoration: none;
+}
+
+// flipcard
 
 .flip {
   -webkit-perspective: 800;

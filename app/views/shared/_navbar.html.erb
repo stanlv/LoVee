@@ -79,10 +79,10 @@
           <% options = {class: "avatar dropdown-toggle", id: "navbar-wagon-menu"} %>
             <% if current_user.facebook_picture_url %>
               <%= image_tag current_user.facebook_picture_url, options %>
-              <span class="badge badge-coins"><%= current_user.total_kisses %> </span>
+              <span class="badge badge-coins"><%= current_user.total_kisses %> ❤</span>
             <% else %>
               <%= image_tag "avatar_default.png", options %>
-              <span class="badge badge-coins"><%= current_user.total_kisses %></span>
+              <span class="badge badge-coins"><%= current_user.total_kisses %> ❤</span>
             <% end %>
 
         </div>
