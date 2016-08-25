@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :challenges, through: :bookings
   belongs_to :partner, class_name: "User"
 
-
   after_create :send_welcome_email, :assign_partner, :assign_partner_via_email
 
   def self.find_for_facebook_oauth(auth)
@@ -29,6 +28,13 @@ class User < ActiveRecord::Base
     end
 
     return user
+  end
+
+  def total_kisses
+    return 0 unless partner_id
+    earn = bookings.where(status: 'completed', spend: false).map(&:category).sum(&:kisses)
+    spend = bookings.where(spend: true).map(&:category).sum(&:kisses)
+    earn - spend + 50
   end
 
   private

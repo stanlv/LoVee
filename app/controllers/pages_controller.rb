@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, except: [:request_challenge, :dashboard]
+  skip_before_action :authenticate_user!, except: [:request_challenge]
 
   def home
     @disable_nav = true
@@ -16,8 +16,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @bookings = current_user.bookings
-    @user = current_user
+
   end
 
   def gender

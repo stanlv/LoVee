@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :sorted_challenges, only: [:index]
   before_action :set_booking, only: [:show]
+  skip_before_action :authenticate_user!, only: [:validate_challenge]
 
   def index
-
+    @bookings = current_user.bookings
+    @user = current_user
   end
 
   def show
@@ -17,9 +18,9 @@ class BookingsController < ApplicationController
   def create
     @booking = current_user.bookings.build(
       challenge_id: params[:challenge_ids].split(/\s/).sample,
-      status: "created")
+      status: "created", partner_id: current_user.partner_id, spend: false)
     if @booking.save
-      BookingMailer.challenge_notification(@booking, @email).deliver_now if !current_user.partner.nil?
+      BookingMailer.challenge_notification(@booking.id).deliver_now if current_user.partner
       redirect_to @booking, notice: 'One challenge has been assigned! Go to your dashboard to view it.'
     else
       set_challenges
@@ -27,6 +28,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def confirm_challenge
+    @booking = Booking.find(params[:booking_id])
+    @booking.update(status: 'pending')
+    BookingMailer.challenge_confirmation(@booking, current_user.partner, current_user).deliver_now if current_user.partner
+
+    respond_to do |format|
+      format.html { redirect_to dashboard_path }
+      format.js
+    end
+  end
+
+  def validate_challenge
+    @booking = Booking.find(params[:booking_id])
+    @booking.update(status: 'completed')
+    redirect_to dashboard_path
+  end
 
   private
 
