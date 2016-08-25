@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:validate_challenge]
 
   def index
-    @bookings = current_user.bookings
+    @bookings = current_user.bookings.new_to_old
     @user = current_user
   end
 
@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to dashboard_path }
-      format.js
+      format.json
     end
   end
 

@@ -6,4 +6,6 @@ class Booking < ActiveRecord::Base
 
   validates :status, inclusion: { in: %w(created pending completed failed) } # ['created', 'completed', 'failed']
 
+  scope :new_to_old , -> {order(created_at: :desc)}
+
 end
