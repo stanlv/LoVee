@@ -2,6 +2,18 @@
   <h1 class="title ">Your dashboard</h1>
 </div>
 
+<div class="text-center">
+  <% if @user.partner.nil? %>
+    <%= link_to "New challenge", play_path, class: "button-lovee button-lovee-modal", id: "dash-btns" %>
+    <%= link_to t(".top_call_to_action", default: "Add your partner"), "" , class: "button-lovee button-lovee-modal", id: "dash-btns", "data-toggle" => "modal", "data-target" => "#invitation" %>
+  <% else %>
+    <%= link_to "New challenge", play_path, class: "button-lovee button-lovee-modal", id: "dash-btns" %>
+  <% end %>
+</div>
+
+<br>
+<br>
+
 <div class="container">
   <div class="row">
     <% @bookings.each do |booking| %>
@@ -61,7 +73,7 @@
 
 
 
-<!-- modal -->
+<!-- modal for request sent -->
 <div class="modal fade" id="request-sent" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content lovee-modal">
@@ -82,6 +94,30 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+<!-- Modal for inviting partner -->
+<div class="modal fade" id="invitation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content lovee-modal">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center heading-blue" id="myModalLabel">Invite your partner</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag invite_path, method: :get do %>
+        <br>
+          <p class="text-center">Your partner's email</p>
+          <%= email_field_tag :email, nil, class: "form-control", placeholder: "partner@lovee.com" %>
+          <br>
+          <div class="text-center">
+            <%= submit_tag "invite", class: "button-lovee button-lovee-modal", id: "invite" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

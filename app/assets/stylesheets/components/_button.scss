@@ -53,6 +53,25 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
+#dash-btns:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#good-luck {
+  color: $yellow;
+  margin-top: 15px;
+  border: 1.5px solid $yellow;
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 8px 15px;
+  background: 0;
+}
+
+#good-luck:hover {
+  color: $red;
+  border-color: $red;
+}
+
 .gender-btn:hover {
     background-color:white !important;
   }
