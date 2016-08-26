@@ -1,6 +1,6 @@
 <div class="text-center">
   <h1 class="title">Let's play
-    <% if current_user && current_user.partner.first_name %>
+    <% if current_user && current_user.partner && current_user.partner. first_name %>
       with <span id="play-name"> <%= current_user.partner.first_name %></span>
     <% end %>
   </h1>

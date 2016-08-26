@@ -3,7 +3,7 @@
       <div class="row">
         <% @categories.each do |category| %>
           <div class="col-xs-12 col-md-4">
-            <div class="category-card text-center">
+            <div class="category-card text-center" id="buy-category">
               <span class="category-card-link">
                 <h1 class="call-to-action-font"><%= category.name %></h1>
                 <%= image_tag category.picture, class: "category-card-image "%>
@@ -11,8 +11,8 @@
                 </h3>
                 <%= form_for :category, {url: spend_bookings_path, method: :post} do |f| %>
                   <%= f.hidden_field :id, value: category.id %>
-                  <%= f.button :button, class: 'button-lovee button-lovee-small' do %>
-                    Buy<i class="fa fa-gamepad"></i>
+                  <%= f.button :button, class: 'button-lovee button-lovee-small', id: "buy" do %>
+                    Buy
                   <% end %>
                 <% end  %>
               </span>
@@ -23,6 +23,6 @@
   </div>
 <br>
 
-<div class="text-center">
+<div class="text-center" style="height:80px">
   <%= link_to "Back", play_path, class: "button-lovee button-lovee-small", id: "back"%>
 </div>

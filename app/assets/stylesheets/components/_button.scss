@@ -49,6 +49,7 @@
   background:white;
 }
 
+
 #back:hover {
   background: rgba(255, 255, 255, 0.5);
 }
@@ -68,6 +69,17 @@
 }
 
 #good-luck:hover {
+  color: $red;
+  border-color: $red;
+}
+
+#buy {
+  color: $yellow;
+  border-color: $yellow;
+  margin-top: 10px;
+}
+
+#buy:hover {
   color: $red;
   border-color: $red;
 }
