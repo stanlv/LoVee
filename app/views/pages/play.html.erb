@@ -1,5 +1,9 @@
 <div class="text-center">
-  <h1 class="title">Let's play <%= "with #{current_user.partner.first_name}" if current_user && current_user.partner %></h1>
+  <h1 class="title">Let's play
+    <% if current_user && current_user.partner.first_name %>
+      with <span id="play-name"> <%= current_user.partner.first_name %></span>
+    <% end %>
+  </h1>
 
   <div class="container">
     <div class="row">

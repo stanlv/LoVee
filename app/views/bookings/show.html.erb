@@ -9,6 +9,24 @@
           <h3 class="red-text"><%= @booking.challenge.title %></h3>
           <p><%= @booking.challenge.description %></p>
           <p><%= @booking.challenge.category.kisses %>  <%= image_tag "tiny_kiss.png" %></p>
+
+
+
+
+          <div class=" text-center text-align send-message">
+            <% if current_user.partner_id.nil? %>
+              <p class="red-text">You need a partner to play</p>
+              <%= link_to t(".top_call_to_action", default: "Add your partner"), "" , class: "button-lovee btn", id: "good-luck", "data-toggle" => "modal", "data-target" => "#invitation" %>
+              <br>
+              <br>
+              <p><%= link_to "Or go to dashboard", dashboard_path%></p>
+            <% else %>
+              <%= link_to t(".top_call_to_action", default: " Good luck "), dashboard_path , class: "button-lovee btn", id: "good-luck" %>
+            <% end %>
+          </div>
+
+
+
         </div>
         </div>
       </div>
@@ -16,26 +34,9 @@
   </div>
 
   <br>
+  <br>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <div class= "card" >
-          <div class=" text-center text-align send-message">
-            <% if current_user.partner_id.nil? %>
-              <p class="subheading">You need a partner to play</p>
-              <%= link_to t(".top_call_to_action", default: "Add your partner"), "" , class: "button-lovee button-lovee-small  btn", "data-toggle" => "modal", "data-target" => "#invitation" %>
-              <br>
-              <br>
-              <p><%= link_to "Or go to dashboard", dashboard_path%></p>
-            <% else %>
-              <%= link_to t(".top_call_to_action", default: " Good luck "), dashboard_path , class: "button-lovee button-lovee-small  btn" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
 
