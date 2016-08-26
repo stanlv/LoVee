@@ -9,7 +9,7 @@ class Spend::BookingsController < ApplicationController
   def create
     return nil unless current_user.partner
     category = Category.find(params[:category][:id])
-    challenge = category.challenges.where(gender: current_user.partner.gender).sample
+    challenge = category.challenges.where(gender: [current_user.partner.gender, "both"]).sample
     partner_booking = current_user.partner.bookings.build(
       challenge_id: challenge.id,
       partner_id: current_user.id,
