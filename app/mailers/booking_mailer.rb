@@ -25,7 +25,7 @@ class BookingMailer < ApplicationMailer
 
      mail(
       to:       @partner.email,
-      subject:  "Challenge to confirms "
+      subject:  "Challenge to confirm "
     )
 
   end
