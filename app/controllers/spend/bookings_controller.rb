@@ -17,7 +17,7 @@ class Spend::BookingsController < ApplicationController
       spend: true,
       status: "created")
     if partner_booking.save
-      CongratsMailer.spend_challenge(partner_booking, current_user.partner, current_user)
+      CongratsMailer.spend_challenge(partner_booking.id).deliver_now
       redirect_to congrats_path(category: category.id)
     else
       flash[:error] = "Oops, something went wrong"

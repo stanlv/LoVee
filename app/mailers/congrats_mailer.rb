@@ -1,10 +1,10 @@
 class CongratsMailer < ApplicationMailer
 
-  def spend_challenge(user, booking, partner)
-    @booking = booking
-    @partner = partner
-    @user = user
-    @email = partner.email
+  def spend_challenge(booking_id)
+    @booking = Booking.find(booking_id)
+    @partner = @booking.user.partner
+    @user = @booking.user
+    @email = @user.email
 
      mail(
       to:       @email,
