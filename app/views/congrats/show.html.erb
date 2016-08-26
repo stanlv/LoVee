@@ -5,7 +5,13 @@
         <div class=" text-center text-align lovee-message">
           <h2 class="heading-yellow"> Yay!</h2>
           <br>
-          <p> <strong> LoVee </strong> has selected a challenge for your partner in the category <%= @category.name %>.</p>
+
+          <p> <strong> LoVee </strong> has selected a challenge for your partner in the category:
+          <div class="yellow-text">
+          <p class="heading-yellow"><%= @category.name %> </p></p>
+             <h1 class="lovee-icon icon-thumbs"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h1>
+          <p class="heading-yellow"> You will<strong class="lovee-icon">lovee</strong> it ! </p>
+          </div>
         </div>
       </div>
     </div>
