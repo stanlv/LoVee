@@ -65,4 +65,12 @@ class BookingsController < ApplicationController
     #params.permit(:seats, :country, :category)
     params.require(:sorted_challenges).permit(:name, :picture, :kisses, :gender)
   end
+
+  def partner_necessary
+    if current_user.partner.nil?
+     redirect_to play_path
+     flash[:notice] = "We should have a partner to ask for challenge confirmation"
+    else
+    end
+  end
 end
