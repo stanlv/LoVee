@@ -7,21 +7,26 @@ class Spend::BookingsController < ApplicationController
   end
 
   def create
-    return nil unless current_user.partner
+   if current_user.partner.nil?
+     redirect_to dashboard_path
+     flash[:notice] = "We should have a partner to spend kisses"
+    else
     category = Category.find(params[:category][:id])
     challenge = category.challenges.where(gender: [current_user.partner.gender, "both"]).sample
     partner_booking = current_user.partner.bookings.build(
-      challenge_id: challenge.id,
-      partner_id: current_user.id,
-      kisses: category.kisses,
-      spend: true,
-      status: "created")
+    challenge_id: challenge.id,
+    partner_id: current_user.id,
+    kisses: category.kisses,
+    spend: true,
+    status: "created")
     if partner_booking.save
-      CongratsMailer.spend_challenge(partner_booking.id).deliver_now
-      redirect_to congrats_path(category: category.id)
+    CongratsMailer.spend_challenge(partner_booking.id).deliver_now
+    redirect_to congrats_path(category: category.id)
     else
-      flash[:error] = "Oops, something went wrong"
-      redirect_to play_path
+    flash[:error] = "Oops, something went wrong"
+    redirect_to play_path
     end
   end
 end
+end
+
