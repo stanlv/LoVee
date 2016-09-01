@@ -25,8 +25,7 @@ class User < ActiveRecord::Base
       user = User.new(user_params)
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
-    end
-
+      end
     return user
   end
 
@@ -36,7 +35,7 @@ class User < ActiveRecord::Base
     earn = (user_bookings.any? ? user_bookings.sum(:kisses) : 0)
     user_bookings = Booking.where(partner_id: self.id, spend: true)
     spend = (user_bookings.any? ? user_bookings.sum(:kisses) : 0)
-    earn - spend + 50
+    earn - spend + 500
   end
 
   private
