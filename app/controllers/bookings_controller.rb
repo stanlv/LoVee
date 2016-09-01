@@ -32,8 +32,8 @@ class BookingsController < ApplicationController
   end
 
   def confirm_challenge
-    @booking = Booking.find(params[:booking_id])
-    @booking.update(status: 'pending')
+    @booking = Booking.find(params[:booking_id]) if current_user.partner
+    @booking.update(status: 'pending') if current_user.partner
     BookingMailer.challenge_confirmation(@booking.id, current_user.id).deliver_now if current_user.partner
 
     respond_to do |format|
@@ -66,11 +66,4 @@ class BookingsController < ApplicationController
     params.require(:sorted_challenges).permit(:name, :picture, :kisses, :gender)
   end
 
-  def partner_necessary
-    if current_user.partner.nil?
-     redirect_to play_path
-     flash[:notice] = "We should have a partner to ask for challenge confirmation"
-    else
-    end
-  end
 end
